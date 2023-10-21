@@ -1,3 +1,9 @@
+/*
+Nombre del archivo: Ejercicio.cpp
+Autor: Cesar Alejandro Velazquez Mercado
+Fecha de creación: 20 de octubre de 2023
+Descripción: Me hace muchas cosas entre dos arreglos desde sumar hasta decirme cual es el maximo.
+*/
 #include <stdio.h>
 
 int menu();
@@ -13,7 +19,7 @@ int main()
     int check, arreglo[5], arreglo2[5], tam = sizeof(arreglo) / sizeof(arreglo[0]);
     int destino[5], resultado;
     printf("Llena el arreglo con 5 números\n\n");
-    llenararregl(arreglo, tam);
+    llenararregl(arreglo, tam); //manda a llamar a la funcion donde se llenan los arreglos
     printf("\n\nllena un segundo arreglocon 5 números: \n\n");
     llenararregl(arreglo2, tam);
     printf("\n\n");
@@ -112,7 +118,7 @@ int menu()
     return op;
 }
 
-int llenararregl(int arreglo[], int tam)
+int llenararregl(int arreglo[], int tam) // llena todo un arreglo
 {
     for (int i = 0; i < tam; i++) 
     {
@@ -122,16 +128,18 @@ int llenararregl(int arreglo[], int tam)
     return arreglo[5];
 }
 
-int sumaA(int *arr, int tam) {
+int sumaA(int *arr, int tam) // me todos lo valores dentro de un arreglo
+{
     int suma = 0, *ptr = arr;
-    for (int i = 0; i < tam; i++) {
+    for (int i = 0; i < tam; i++) 
+    {
         suma += *ptr;
         ptr++;
     }
     return suma;
 }
 
-void copiarArreglos(int *origen, int *destino, int tam) 
+void copiarArreglos(int *origen, int *destino, int tam) // copia un arreglo a otro
 {
     for (int i = 0; i < tam; i++) 
     {
@@ -139,7 +147,7 @@ void copiarArreglos(int *origen, int *destino, int tam)
     }
 }
 
-void concatenarArreglos(int *arr1, int *arr2, int *resultado, int tam1, int tam2) 
+void concatenarArreglos(int *arr1, int *arr2, int *resultado, int tam1, int tam2) //esta funcion toma dos arreglos y los junta  
 {
     for (int i = 0; i < tam1; i++) 
     {
@@ -152,7 +160,7 @@ void concatenarArreglos(int *arr1, int *arr2, int *resultado, int tam1, int tam2
     }
 }
 
-int compararArreglos(int *arr1, int *arr2, int tam) 
+int compararArreglos(int *arr1, int *arr2, int tam) // esta funcion compara los arreglos y me dice si son iguales
 {
     for (int i = 0; i < tam; i++) 
     {
@@ -164,7 +172,7 @@ int compararArreglos(int *arr1, int *arr2, int tam)
     return 1; 
 }
 
-void encontrarMaximo(int *arr, int tam) 
+void encontrarMaximo(int *arr, int tam) // esta funcion compara todos los numeros de un arreglo apra saber el maximo
 {
     int maximo = arr[0];
     for (int i = 1; i < tam; i++) 
